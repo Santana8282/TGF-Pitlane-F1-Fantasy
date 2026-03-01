@@ -1,0 +1,365 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-fondo:        #000000;
+    --color-superficie:   #0a0a0a;
+    --color-tarjeta:      #0f0f0f;
+    --color-borde:        #1a1a1a;
+    --color-rojo:         #f20d20;
+    --color-rojo-hover:   #d10b1c;
+    --color-texto:        #ffffff;
+    --color-texto-suave:  #888888;
+    --color-texto-muted:  #555555;
+    --color-verde:        #22c55e;
+    --fuente-principal:   'Space Grotesk', sans-serif;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    min-height: 100vh;
+}
+
+
+.contenedor {
+    display: flex;
+    min-height: 100vh;
+}
+
+.barra-lateral {
+    width: 260px;
+    min-width: 260px;
+    background-color: var(--color-superficie);
+    min-height: 100vh;
+    padding: 30px;
+    border-right: 1px solid var(--color-borde);
+    display: flex;
+    flex-direction: column;
+}
+
+.logo h1 {
+    color: var(--color-texto);
+    font-weight: 900;
+    font-style: italic;
+    font-size: 24px;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.logo p {
+    color: var(--color-rojo);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 4px;
+    margin-bottom: 40px;
+}
+
+
+.menu {
+    flex: 1;
+}
+
+.menu a {
+    display: block;
+    padding: 12px 14px;
+    margin-bottom: 6px;
+    color: var(--color-texto-suave);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.15s, color 0.15s;
+    cursor: pointer;
+}
+
+.menu a:hover,
+.menu a.activo {
+    background-color: var(--color-rojo);
+    color: var(--color-texto);
+}
+
+.usuario {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-borde);
+}
+
+.nombre-usuario {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.usuario span {
+    color: var(--color-texto-suave);
+    font-size: 12px;
+}
+
+.usuario .btn-logout {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--color-rojo);
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.2s;
+}
+
+.usuario .btn-logout:hover {
+    opacity: 0.7;
+}
+
+.principal {
+    flex: 1;
+    padding: 50px;
+    overflow-y: auto;
+}
+
+.panel {
+    color: var(--color-rojo);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.encabezado h2 {
+    font-size: 42px;
+    font-weight: 900;
+    font-style: italic;
+    margin: 10px 0 30px 0;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.botones {
+    margin-bottom: 40px;
+}
+
+.botones button {
+    padding: 12px 22px;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    font-family: var(--fuente-principal);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.botones button:hover  { opacity: 0.85; }
+.botones button:active { transform: scale(0.98); }
+
+.boton-oscuro {
+    background-color: #111;
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+}
+
+.boton-rojo {
+    background-color: var(--color-rojo);
+    color: var(--color-texto);
+}
+
+
+.tarjetas {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.tarjeta {
+    flex: 1;
+    background-color: var(--color-tarjeta);
+    padding: 25px;
+    border: 1px solid var(--color-borde);
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--color-rojo);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.tarjeta:hover::before {
+    opacity: 1;
+}
+
+.tarjeta p {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-texto-suave);
+    margin-bottom: 8px;
+}
+
+.tarjeta h3 {
+    font-size: 32px;
+    margin: 6px 0 8px 0;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.tarjeta h3 small {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+.contenido {
+    display: flex;
+    gap: 30px;
+}
+
+.movimientos {
+    flex: 2;
+    background-color: var(--color-tarjeta);
+    padding: 25px;
+    border: 1px solid var(--color-borde);
+}
+
+.movimientos h3 {
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.movimientos table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    text-align: left;
+    padding: 12px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-texto-muted);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--color-borde);
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+td span {
+    color: var(--color-texto-muted);
+    font-size: 12px;
+}
+
+
+.etiqueta {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.etiqueta.verde  { color: var(--color-verde); }
+.etiqueta.rojo   { background-color: var(--color-rojo); color: white; }
+.etiqueta.gris   { background-color: #222; color: #999; }
+
+.positivo   { color: var(--color-verde); }
+.negativo   { color: var(--color-rojo); }
+.verde      { color: var(--color-verde); }
+.texto-rojo { color: var(--color-rojo); }
+
+.gran-premio {
+    flex: 1;
+    background-color: var(--color-rojo);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gran-premio::after {
+    content: 'GP';
+    position: absolute;
+    right: -10px;
+    bottom: -20px;
+    font-size: 120px;
+    font-weight: 900;
+    font-style: italic;
+    color: rgba(0,0,0,0.15);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.gran-premio p {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.8;
+}
+
+.gran-premio h3 {
+    font-size: 26px;
+    margin: 8px 0 20px 0;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.contador {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.contador div {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 14px;
+    text-align: center;
+    flex: 1;
+}
+
+.contador span {
+    display: block;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.contador small {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.clima {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.texto-muted {
+    color: var(--color-texto-muted);
+}
+
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
