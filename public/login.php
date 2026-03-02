@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php if ($error !== ''): ?>
         <div class="mensaje-error" role="alert">
-            ⚠ <?= htmlspecialchars($error) ?>
+            <?= htmlspecialchars($error) ?>
         </div>
     <?php endif; ?>
 
