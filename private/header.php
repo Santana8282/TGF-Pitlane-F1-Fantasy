@@ -24,7 +24,7 @@ if (!isset($tituloPagina)) {
 
         <nav class="menu">
             <a href="../public/index.php"         class="<?= basename($_SERVER['PHP_SELF']) === 'index.php'         ? 'activo' : '' ?>">Inicio</a>
-            <a href="../public/equipo.php"        class="<?= basename($_SERVER['PHP_SELF']) === 'equipo.php'        ? 'activo' : '' ?>">Mi Equipo</a>
+            <a href="../public/equipo.php"         class="<?= basename($_SERVER['PHP_SELF']) === 'equipo.php'         ? 'activo' : '' ?>">Mi Equipo</a>
             <a href="../public/mercado.php"       class="<?= basename($_SERVER['PHP_SELF']) === 'mercado.php'       ? 'activo' : '' ?>">Mercado</a>
             <a href="../public/ligas.php"         class="<?= basename($_SERVER['PHP_SELF']) === 'ligas.php'         ? 'activo' : '' ?>">Ligas</a>
             <a href="../public/clasificacion.php" class="<?= basename($_SERVER['PHP_SELF']) === 'clasificacion.php' ? 'activo' : '' ?>">Clasificación</a>
