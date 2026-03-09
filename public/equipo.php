@@ -572,7 +572,7 @@ include __DIR__ . '/../private/header.php';
                         <form method="post">
                             <input type="hidden" name="accion"    value="fichar">
                             <input type="hidden" name="id_piloto" value="<?= (int)$p['id_piloto'] ?>">
-                            <button type="submit" class="fila-btn-add">⬛ Fichar</button>
+                            <button type="submit" class="fila-btn-add">Fichar</button>
                         </form>
                     <?php endif; ?>
                 </div>
