@@ -34,6 +34,9 @@ require_once __DIR__ . '/iconos.php';
             <a href="../public/resultados.php"     class="<?= basename($_SERVER['PHP_SELF']) === 'resultados.php'    ? 'activo' : '' ?>">
                 <?= icono('resultados', 'menu-icono') ?> Resultados
             </a>
+            <a href="../public/ligas.php"          class="<?= basename($_SERVER['PHP_SELF']) === 'ligas.php'         ? 'activo' : '' ?>">
+                <?= icono('trofeo', 'menu-icono') ?> Ligas
+            </a>
             <a href="../public/ayuda.php"          class="<?= basename($_SERVER['PHP_SELF']) === 'ayuda.php'         ? 'activo' : '' ?>">
                 <?= icono('ayuda', 'menu-icono') ?> Ayuda
             </a>

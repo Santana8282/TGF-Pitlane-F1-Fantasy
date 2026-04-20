@@ -988,3 +988,32 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- Tablas para el sistema de ligas privadas
+
+CREATE TABLE IF NOT EXISTS `ligas` (
+  `id_liga` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `descripcion` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `codigo_invitacion` varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
+  `id_creador` int NOT NULL COMMENT 'id_usuario del creador',
+  `fecha_creacion` datetime DEFAULT CURRENT_TIMESTAMP,
+  `activa` tinyint(1) DEFAULT 1,
+  PRIMARY KEY (`id_liga`),
+  UNIQUE KEY `codigo_invitacion` (`codigo_invitacion`),
+  KEY `id_creador` (`id_creador`),
+  CONSTRAINT `ligas_ibfk_1` FOREIGN KEY (`id_creador`) REFERENCES `usuarios` (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `liga_miembros` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_liga` int NOT NULL,
+  `id_equipo` int NOT NULL,
+  `fecha_union` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `liga_equipo` (`id_liga`, `id_equipo`),
+  KEY `id_liga` (`id_liga`),
+  KEY `id_equipo` (`id_equipo`),
+  CONSTRAINT `liga_miembros_ibfk_1` FOREIGN KEY (`id_liga`) REFERENCES `ligas` (`id_liga`) ON DELETE CASCADE,
+  CONSTRAINT `liga_miembros_ibfk_2` FOREIGN KEY (`id_equipo`) REFERENCES `equipos_fantasy` (`id_equipo`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
