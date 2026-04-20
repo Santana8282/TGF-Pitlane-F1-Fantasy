@@ -115,17 +115,17 @@ usort($todosPilotos, function($a, $b) use ($ordenar, $puntosTotalesPilotos) {
 });
 
 $coloresEscuderia = [
-    'McLaren Mastercard F1 Team'       => '#FF8700',
-    'Mercedes-AMG Petronas F1 Team'  => '#27F4D2',
-    'Oracle Red Bull Racing' => '#3671C6',
-    'Scuderia Ferrari HP'    => '#E8002D',
-    'Atlassian Williams F1 Team'        => '#005AFF',
-    'Visa Cash App Racing Bulls F1 Team'       => '#6692FF',
-    'Aston Martin Aramco F1 Team'    => '#006F62',
-    'TGR Haas F1 Team' => '#B6BABD',
-    'Audi Revolut F1 Team'           => '#D0D0D0',
-    'BWT Alpine F1 Team'     => '#FF87BC',
-    'Cadillac Formula 1 Team'       => '#C8102E',
+    'McLaren Mastercard F1 Team'        => '#FF8700', // naranja McLaren
+    'Mercedes-AMG Petronas F1 Team'     => '#00F5C3', // turquesa brillante Mercedes
+    'Oracle Red Bull Racing'            => '#0D1B8E', // azul marino Red Bull
+    'Scuderia Ferrari HP'               => '#DC0000', // rojo Ferrari
+    'Atlassian Williams F1 Team'        => '#00CFFF', // azul cielo claro Williams
+    'Visa Cash App Racing Bulls F1 Team'=> '#8B5CF6', // violeta Racing Bulls
+    'Aston Martin Aramco F1 Team'       => '#006F62', // verde botella Aston Martin
+    'TGR Haas F1 Team'                  => '#9B9B9B', // gris grafito Haas
+    'Audi Revolut F1 Team'              => '#1A1A1A', // negro Audi
+    'BWT Alpine F1 Team'                => '#FF87BC', // rosa Alpine
+    'Cadillac Formula 1 Team'           => '#C9A84C', // dorado Cadillac
 ];
 
 $presupuesto = (int) $equipo['presupuesto'];
