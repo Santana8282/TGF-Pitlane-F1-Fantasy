@@ -1,0 +1,9 @@
+# Configuración local con credenciales — nunca subir al repositorio
+private/config.php
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Logs de PHP
+*.log
