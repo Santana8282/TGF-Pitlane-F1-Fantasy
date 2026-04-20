@@ -23,7 +23,7 @@ if (!$equipo) {
     $equipo = [
         'id_equipo' => $idEquipoNuevo,
         'nombre_equipo' => $nombreEquipo,
-        'presupuesto' => 100000000
+        'presupuesto' => 40000000
     ];
 }
 

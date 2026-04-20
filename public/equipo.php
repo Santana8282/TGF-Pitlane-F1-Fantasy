@@ -20,7 +20,7 @@ if (!$equipo) {
     $equipo = [
         'id_equipo' => $idEquipoNuevo,
         'nombre_equipo' => $nombreEquipo,
-        'presupuesto' => 100000000
+        'presupuesto' => 40000000
     ];
 }
 
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $accion   = $_POST['accion']    ?? '';
     $idPiloto = (int) ($_POST['id_piloto'] ?? 0);
-    $slot     = (int) ($_POST['slot']      ?? 0);   // 1 = Líder, 2 = Escudero
+    $slot     = (int) ($_POST['slot']      ?? 0);   // 1 = Capitán ×2, 2 = Segundo Piloto
 
     if ($accion === 'añadir' && $idPiloto > 0 && in_array($slot, [1, 2])) {
 
@@ -206,7 +206,7 @@ function colorEscuderia(string $nombre, array $mapa): string {
 $stmtCarrera = $pdo->query("SELECT nombre, fecha FROM carreras WHERE fecha >= CURDATE() ORDER BY fecha ASC LIMIT 1");
 $proximaCarrera = $stmtCarrera->fetch();
 
-$presupuestoInicial = 100000000;
+$presupuestoInicial = 40000000;
 $gastado            = $presupuestoInicial - $presupuesto;
 $porcentajeGastado  = max(0, min(100, round(($gastado / $presupuestoInicial) * 100)));
 
@@ -258,14 +258,14 @@ include __DIR__ . '/../private/header.php';
     </div>
 
     <div class="stat-card">
-        <p class="stat-label">Slot 1 — Líder</p>
+        <p class="stat-label">Slot 1 — Capitán ×2</p>
         <div class="stat-valor" style="font-size:18px; margin-top:4px;">
             <?= $pilotSlot1 ? htmlspecialchars(formatNombre($pilotSlot1['nombre'])) : '<span style="color:#333;">Vacío</span>' ?>
         </div>
     </div>
 
     <div class="stat-card">
-        <p class="stat-label">Slot 2 — Escudero</p>
+        <p class="stat-label">Slot 2 — Segundo Piloto</p>
         <div class="stat-valor" style="font-size:18px; margin-top:4px;">
             <?= $pilotSlot2 ? htmlspecialchars(formatNombre($pilotSlot2['nombre'])) : '<span style="color:#333;">Vacío</span>' ?>
         </div>
@@ -291,7 +291,7 @@ include __DIR__ . '/../private/header.php';
 
 <div class="garaje-grid">
 
-<?php foreach ([1 => 'Líder', 2 => 'Escudero'] as $numSlot => $rolSlot):
+<?php foreach ([1 => 'Capitán ×2', 2 => 'Segundo Piloto'] as $numSlot => $rolSlot):
     $pilotSlot = $numSlot === 1 ? $pilotSlot1 : $pilotSlot2;
 ?>
 
@@ -499,7 +499,7 @@ include __DIR__ . '/../private/header.php';
     <div class="modal">
         <div class="modal-header">
             <div>
-                <div class="modal-slot-label" id="modalSlotLabel">Slot 1 // Líder</div>
+                <div class="modal-slot-label" id="modalSlotLabel">Slot 1 // Capitán ×2</div>
                 <h3>Seleccionar Piloto</h3>
             </div>
             <button class="modal-cerrar" onclick="cerrarModal('modalSlot')">✕</button>
@@ -659,7 +659,7 @@ function abrirModalLiberar(idPiloto, nombre, escuderia, devolucion) {
 }
 
 function abrirModal(slot) {
-    var labels = { 1: 'Slot 1 // Líder', 2: 'Slot 2 // Escudero' };
+    var labels = { 1: 'Slot 1 // Capitán ×2', 2: 'Slot 2 // Segundo Piloto' };
     document.getElementById('modalSlotLabel').textContent = labels[slot] || ('Slot ' + slot);
     document.querySelectorAll('.input-slot-modal').forEach(function(inp) {
         inp.value = slot;

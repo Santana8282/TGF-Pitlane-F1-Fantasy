@@ -33,7 +33,7 @@ include __DIR__ . '/../private/header.php';
                 <h4>Forma tu equipo</h4>
             </div>
             <div class="ayuda-card-body">
-                <p>Tu equipo se compone de <strong>5 pilotos</strong> y <strong>1 escudería</strong>. Tienes un presupuesto de <strong>100 millones de euros</strong> para ficharlo todo.</p>
+                <p>Tu equipo se compone de <strong>5 pilotos</strong> y <strong>1 escudería</strong>. Tienes un presupuesto de <strong>40 millones de euros</strong> para ficharlo todo.</p>
                 <ul>
                     <li>Máximo <strong>2 pilotos</strong> de la misma escudería.</li>
                     <li>Uno de tus pilotos puede ser nombrado <strong>Capitán</strong>: sus puntos se <em>multiplican por 2</em>.</li>
